@@ -42,21 +42,20 @@ class AuthControllers {
     String res = 'Something went wrong';
     try {
       if (email.isNotEmpty && password.isNotEmpty) {
-        //Hashing the Entered Password with salt and trimming it to hash only exluding the salt
-        String pwd = BCrypt.hashpw(password, BCrypt.gensalt()).substring(0, 6);
-
         //Getting the data of current user from the database
         var user = await _firestore.collection('users').doc(email).get();
         userData = user.data()!;
 
-        //Triming the stored password to hash only and removing the salt from it for comparison
-        String storedPassword = userData['password'].toString().substring(0, 6);
+        //Getting the stored password of login attempting user
+        String storedPassword = userData['password'];
 
-        if (userData['email'] == email && pwd == storedPassword) {
+        //Comparing the hashes of both the passwords
+        bool pwd = BCrypt.checkpw(password, storedPassword);
+
+        if (userData['email'] == email && pwd) {
           res = 'Success';
-        } else if (userData['email'] == email && pwd != storedPassword) {
+        } else if (userData['email'] == email && !pwd) {
           res = 'Invalid Credentials';
-          // print(pswd);
         } else {
           res = 'Something went wrong';
         }
