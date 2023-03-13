@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "447093896782",
+    "project_id": "auth-using-hash-and-salt",
+    "storage_bucket": "auth-using-hash-and-salt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447093896782:android:031b92d26e0ace07e9b51f",
+        "android_client_info": {
+          "package_name": "com.example.auth_using_hashing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447093896782-5vs6t394vl8vs454dkrtutipiusjv2g7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfPCvgpp3LUJ6nHQFUL38TUy6CKmljkwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447093896782-5vs6t394vl8vs454dkrtutipiusjv2g7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
